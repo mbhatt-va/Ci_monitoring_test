@@ -28,21 +28,6 @@ jobs:
         run: |
           echo "${{ format('{0} says {1}', github.actor, matrix.greeting) }}"
 
-      - name: To JSON
-        run: echo 'Job context is ${{ toJSON(job) }}'
-
-      - name: Always
-        if: ${{ always() }}
-        run: echo "You will always see this"
-
-      - name: Canceled
-        if: ${{ canceled() }}
-        run: echo "You canceled the workflow"
-     
-      - name: Failure
-        if: ${{ failure() }}
-        run: echo "Something went wrong..."
-
       - name: Send custom variable to Meercode Build
         uses: meercodeio/meercode-custom-variable@0.1.0
         with:
