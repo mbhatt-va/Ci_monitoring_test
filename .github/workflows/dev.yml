@@ -42,3 +42,9 @@ jobs:
       - name: Failure
         if: ${{ failure() }}
         run: echo "Something went wrong..."
+
+      - name: Send custom variable to Meercode Build
+        uses: meercodeio/meercode-custom-variable@0.1.0
+        with:
+          meercode-token: '${{ secrets.MEERCODE_TOKEN }}'
+          url: 'YOUR_CUSTOM_URL'
