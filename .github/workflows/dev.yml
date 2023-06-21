@@ -21,7 +21,7 @@ jobs:
         run: echo "greeting ends with y"
 
       - name: Print if contains 'ow'
-        if: ${{ cotains(matrix.greeting, 'ow') }}
+        if: ${{ contains(matrix.greeting, 'ow') }}
         run: echo "greeting contains ow"
 
       - name: Print formatted greeting
